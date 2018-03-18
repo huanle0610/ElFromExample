@@ -1,13 +1,18 @@
-function planFormData () {
+function planFormData() {
   return {
-    name: "",
+    name: "abc",
     region: "",
     date1: "",
     date2: "",
     delivery: false,
     type: [],
-    resource: "",
-    desc: ""
+    resource: "线下场地免费",
+    desc: "cccxcx",
+    calendar: {
+        y: '2018',
+        m: '1',
+        d: '21'
+    }
   }
 }
 export default planFormData

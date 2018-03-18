@@ -21,8 +21,13 @@
       <el-input v-model="domain.value"></el-input><el-button @click.prevent="removeDomain(domain)">删除</el-button>
     </el-form-item>
 
-    <el-form-item>
-      <plan-form-tab v-model="dynamicValidateForm.plans"></plan-form-tab>
+    <el-form-item
+      v-for="(plan, index) in dynamicValidateForm.plans"
+      :label="'Plan' + index"
+      :prop="'plans.' + index + '.data'"
+      :key="plan.key"
+    >
+      <plan-form v-model="plan.data" :path="'plans.' + index + '.data'"></plan-form>
     </el-form-item>
 
     <el-form-item>
@@ -34,13 +39,11 @@
 </template>
 
 <script>
-import PlanFormTab from "./PlanFormTab";
 import PlanForm from "./PlanForm";
 import planDataConstructor from "./plan.js";
 
 export default {
   components: {
-    PlanFormTab,
     PlanForm
   },
   data() {
@@ -50,7 +53,11 @@ export default {
           {
             title: "Tab 1",
             name: "1",
-            content: PlanForm,
+            data: planDataConstructor()
+          },
+          {
+            title: "Tab 2",
+            name: "2",
             data: planDataConstructor()
           }
         ],
