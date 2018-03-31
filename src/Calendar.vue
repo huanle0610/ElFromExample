@@ -30,8 +30,8 @@
 <script>
 export default {
   model: {
-    prop: 'calendar',
-    event: 'change'
+    prop: "calendar",
+    event: "change"
   },
   props: {
     path: {
@@ -41,5 +41,5 @@ export default {
       type: Object
     }
   }
-}
+};
 </script>

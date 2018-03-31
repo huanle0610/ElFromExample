@@ -24,10 +24,10 @@
     <el-form-item
       v-for="(plan, index) in dynamicValidateForm.plans"
       :label="'Plan' + index"
-      :prop="'plans.' + index + '.data'"
+      :prop="'plans.' + index"
       :key="plan.key"
     >
-      <plan-form v-model="plan.data" :path="'plans.' + index + '.data'"></plan-form>
+      <plan-form v-model="dynamicValidateForm.plans[index]" :path="'plans.' + index"></plan-form>
     </el-form-item>
 
     <el-form-item>
@@ -53,12 +53,12 @@ export default {
           {
             title: "Tab 1",
             name: "1",
-            data: planDataConstructor()
+            ... planDataConstructor()
           },
           {
-            title: "Tab 2",
+            title: "Tab 22",
             name: "2",
-            data: planDataConstructor()
+            ... planDataConstructor()
           }
         ],
         domains: [

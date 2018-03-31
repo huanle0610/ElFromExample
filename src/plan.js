@@ -8,6 +8,8 @@ function planFormData() {
     type: [],
     resource: "线下场地免费",
     desc: "cccxcx",
+    // fileList: [{name: 'abc', cover: 'a'}],
+    fileList: [],
     calendar: {
         y: '2018',
         m: '1',
